@@ -15,6 +15,7 @@
 		D418BDD920815B2300B1C922 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D418BDD720815B2300B1C922 /* LaunchScreen.storyboard */; };
 		D418BDE420815B2400B1C922 /* photoCompareTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D418BDE320815B2400B1C922 /* photoCompareTests.swift */; };
 		D418BDEF20815B2400B1C922 /* photoCompareUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D418BDEE20815B2400B1C922 /* photoCompareUITests.swift */; };
+		D4EBD0802082B2860078A521 /* VisionProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4EBD07F2082B2860078A521 /* VisionProcessor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		D418BDEA20815B2400B1C922 /* photoCompareUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = photoCompareUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D418BDEE20815B2400B1C922 /* photoCompareUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = photoCompareUITests.swift; sourceTree = "<group>"; };
 		D418BDF020815B2400B1C922 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D4EBD07F2082B2860078A521 /* VisionProcessor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisionProcessor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +103,7 @@
 			children = (
 				D418BDCB20815B2200B1C922 /* AppDelegate.swift */,
 				D418BDCD20815B2200B1C922 /* ViewController.swift */,
+				D4EBD07F2082B2860078A521 /* VisionProcessor.swift */,
 				D418BDCF20815B2200B1C922 /* Main.storyboard */,
 				D418BDD520815B2300B1C922 /* Assets.xcassets */,
 				D418BDD720815B2300B1C922 /* LaunchScreen.storyboard */,
@@ -259,6 +262,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D4EBD0802082B2860078A521 /* VisionProcessor.swift in Sources */,
 				D418BDCE20815B2200B1C922 /* ViewController.swift in Sources */,
 				D418BDCC20815B2200B1C922 /* AppDelegate.swift in Sources */,
 				D418BDD420815B2200B1C922 /* photoCompare.xcdatamodeld in Sources */,
