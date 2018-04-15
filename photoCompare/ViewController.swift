@@ -16,13 +16,23 @@ class ViewController: UIViewController,UIImagePickerControllerDelegate,UINavigat
     
     
     @IBAction func takePhoto(_ sender: UIButton) {
-        let imagePicker = UIImagePickerController()
-        imagePicker.delegate = self
-        imagePicker.allowsEditing = true
+        accessIphoneCamera()
+    }
+    
+    private func accessIphoneCamera(){
+        let imagePicker: UIImagePickerController = {
+           let imagePicker = UIImagePickerController()
+           imagePicker.delegate = self
+           imagePicker.allowsEditing = false
+           imagePicker.sourceType = .camera
+           imagePicker.cameraDevice = .front
+            return imagePicker
+        }()
+        
+        
         if UIImagePickerController.isSourceTypeAvailable(.camera){
-            imagePicker.sourceType = .camera
-            imagePicker.cameraDevice = .front
-            present(imagePicker, animated: true, completion: nil)
+            
+            present(imagePicker, animated: false, completion: nil)
         }
     }
     

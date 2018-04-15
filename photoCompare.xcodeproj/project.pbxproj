@@ -16,6 +16,7 @@
 		D418BDE420815B2400B1C922 /* photoCompareTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D418BDE320815B2400B1C922 /* photoCompareTests.swift */; };
 		D418BDEF20815B2400B1C922 /* photoCompareUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D418BDEE20815B2400B1C922 /* photoCompareUITests.swift */; };
 		D4EBD0802082B2860078A521 /* VisionProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4EBD07F2082B2860078A521 /* VisionProcessor.swift */; };
+		D4EBD0902082D98E0078A521 /* MainViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4EBD08F2082D98E0078A521 /* MainViewViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		D418BDEE20815B2400B1C922 /* photoCompareUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = photoCompareUITests.swift; sourceTree = "<group>"; };
 		D418BDF020815B2400B1C922 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D4EBD07F2082B2860078A521 /* VisionProcessor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisionProcessor.swift; sourceTree = "<group>"; };
+		D4EBD08F2082D98E0078A521 /* MainViewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +83,7 @@
 		D418BDBF20815B2200B1C922 = {
 			isa = PBXGroup;
 			children = (
+				D4EBD08F2082D98E0078A521 /* MainViewViewController.swift */,
 				D418BDCA20815B2200B1C922 /* photoCompare */,
 				D418BDE220815B2400B1C922 /* photoCompareTests */,
 				D418BDED20815B2400B1C922 /* photoCompareUITests */,
@@ -263,6 +266,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D4EBD0802082B2860078A521 /* VisionProcessor.swift in Sources */,
+				D4EBD0902082D98E0078A521 /* MainViewViewController.swift in Sources */,
 				D418BDCE20815B2200B1C922 /* ViewController.swift in Sources */,
 				D418BDCC20815B2200B1C922 /* AppDelegate.swift in Sources */,
 				D418BDD420815B2200B1C922 /* photoCompare.xcdatamodeld in Sources */,
