@@ -10,7 +10,7 @@ import UIKit
 
 
 class ViewController: UIViewController,UIImagePickerControllerDelegate,UINavigationControllerDelegate {
-    var image: Any!
+    
     
     @IBOutlet weak var imageView: UIImageView!
     
@@ -30,17 +30,19 @@ class ViewController: UIViewController,UIImagePickerControllerDelegate,UINavigat
            let imagePicker = UIImagePickerController()
            imagePicker.delegate = self
            imagePicker.allowsEditing = false
-           imagePicker.sourceType = .camera
-           imagePicker.cameraDevice = .front
          
-            //transform = CGAffineTransformScale(image.transform, -1, 1);
+         
             return imagePicker
         }()
         
         
         if UIImagePickerController.isSourceTypeAvailable(.camera){
-            
+            imagePicker.sourceType = .camera
+            imagePicker.cameraDevice = .front
             present(imagePicker, animated: false, completion: nil)
+        }else if UIImagePickerController.isSourceTypeAvailable(.photoLibrary){
+            imagePicker.sourceType = .photoLibrary
+             present(imagePicker, animated: false, completion: nil)
         }
     }
     
@@ -50,24 +52,22 @@ class ViewController: UIViewController,UIImagePickerControllerDelegate,UINavigat
         picker.dismiss(animated: true, completion: nil)
     }
     
-    
+    var imageFile: Any!
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
   
-        image = info[UIImagePickerControllerEditedImage] ?? info[UIImagePickerControllerOriginalImage]
-        //imageView.image = image as? UIImage
+        imageFile = info[UIImagePickerControllerOriginalImage]
 
-        let resizeImage = (image as! UIImage).resized(withPercentage: 0.5)
-        let data = UIImagePNGRepresentation(resizeImage!)
-        
-        //covert back to image
-        image = UIImage(data:data!,scale:1.0)
-        //image = image as! UIImage
+        guard let image = imageFile as? UIImage else {
+            return
+        }
+  
         let vp = VisionProcessor()
-        if let imageToprocess = image as? UIImage
-        {
+        let faceCount = vp.numberFaceDetected(image: image)
+       
+
             var msg = ""
-           //print("number \(vp.numberFaceDetected(image: imageToprocess))")
-            switch (vp.numberFaceDetected(image: imageToprocess)){
+        
+            switch faceCount {
             case 0:
                 msg = "no face detected, please retake photo\n"
             case 1:
@@ -89,14 +89,14 @@ class ViewController: UIViewController,UIImagePickerControllerDelegate,UINavigat
                 let returnCharacters = String(repeating: "\n", count: numberOfBlankLines)
                 let alertController = UIAlertController(title: "photo verification", message: msg + returnCharacters, preferredStyle: .alert)
         
-                let imageView = UIImageView(image: self.image as? UIImage)
+                let imageView = UIImageView(image: image)
                 
-                let scaleSize = self.imageScaleSize(maxSize: maxImageSize ,image:(self.image as? UIImage))
+                let scaleSize = self.imageScaleSize(maxSize: maxImageSize ,image:image)
                 
                  alertController.view.addSubview(imageView)
                 
     
-                if (vp.numberFaceDetected(image: imageToprocess) == 1){
+                if (faceCount == 1){
                 alertController.addAction(UIAlertAction(title: "Accepted", style: .default, handler: { _ in
                     //this should probably call the regular check-in
                 }))
@@ -109,19 +109,17 @@ class ViewController: UIViewController,UIImagePickerControllerDelegate,UINavigat
                     }))
                   
                 }
-                
-                //let heightConstant: CGFloat = 16 * 8 //8 return character
+          
                 imageView.translatesAutoresizingMaskIntoConstraints = false
                 alertController.view.addConstraint(NSLayoutConstraint(item: imageView, attribute: .centerX, relatedBy: .equal, toItem: alertController.view, attribute: .centerX, multiplier: 1, constant: 0))
                 alertController.view.addConstraint(NSLayoutConstraint(item: imageView, attribute: .centerY, relatedBy: .equal, toItem: alertController.view, attribute: .centerY, multiplier: 1, constant: 0))
                 alertController.view.addConstraint(NSLayoutConstraint(item: imageView, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1.0, constant: scaleSize.width ))
                 alertController.view.addConstraint(NSLayoutConstraint(item: imageView, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1.0, constant: scaleSize.height ))
                 
-                
                 self.present(alertController, animated: true, completion: nil)
                
-            })
-        }
+            })//dimiss completion ends
+        
         
       
         self.dismiss(animated: true, completion:nil)

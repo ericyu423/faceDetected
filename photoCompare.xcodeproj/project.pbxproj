@@ -17,6 +17,7 @@
 		D418BDEF20815B2400B1C922 /* photoCompareUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D418BDEE20815B2400B1C922 /* photoCompareUITests.swift */; };
 		D4EBD0802082B2860078A521 /* VisionProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4EBD07F2082B2860078A521 /* VisionProcessor.swift */; };
 		D4EBD0902082D98E0078A521 /* MainViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4EBD08F2082D98E0078A521 /* MainViewViewController.swift */; };
+		D4FF7C922085ABE3003BFE38 /* README in Resources */ = {isa = PBXBuildFile; fileRef = D4FF7C912085ABE3003BFE38 /* README */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		D418BDF020815B2400B1C922 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D4EBD07F2082B2860078A521 /* VisionProcessor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisionProcessor.swift; sourceTree = "<group>"; };
 		D4EBD08F2082D98E0078A521 /* MainViewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewViewController.swift; sourceTree = "<group>"; };
+		D4FF7C912085ABE3003BFE38 /* README */ = {isa = PBXFileReference; lastKnownFileType = text; path = README; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,7 +85,7 @@
 		D418BDBF20815B2200B1C922 = {
 			isa = PBXGroup;
 			children = (
-				D4EBD08F2082D98E0078A521 /* MainViewViewController.swift */,
+				D4FF7C912085ABE3003BFE38 /* README */,
 				D418BDCA20815B2200B1C922 /* photoCompare */,
 				D418BDE220815B2400B1C922 /* photoCompareTests */,
 				D418BDED20815B2400B1C922 /* photoCompareUITests */,
@@ -104,6 +106,7 @@
 		D418BDCA20815B2200B1C922 /* photoCompare */ = {
 			isa = PBXGroup;
 			children = (
+				D4EBD08F2082D98E0078A521 /* MainViewViewController.swift */,
 				D418BDCB20815B2200B1C922 /* AppDelegate.swift */,
 				D418BDCD20815B2200B1C922 /* ViewController.swift */,
 				D4EBD07F2082B2860078A521 /* VisionProcessor.swift */,
@@ -238,6 +241,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D4FF7C922085ABE3003BFE38 /* README in Resources */,
 				D418BDD920815B2300B1C922 /* LaunchScreen.storyboard in Resources */,
 				D418BDD620815B2300B1C922 /* Assets.xcassets in Resources */,
 				D418BDD120815B2200B1C922 /* Main.storyboard in Resources */,
