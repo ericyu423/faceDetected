@@ -122,7 +122,6 @@ class ViewController: UIViewController,UIImagePickerControllerDelegate,UINavigat
         
         
       
-        self.dismiss(animated: true, completion:nil)
         
     }
     private func imageScaleSize(maxSize: CGSize,image:UIImage?)->CGSize {
