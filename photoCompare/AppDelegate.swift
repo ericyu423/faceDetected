@@ -9,14 +9,29 @@
 import UIKit
 import CoreData
 
+// Analytics imports AWS
+import AWSCore
+import AWSPinpoint
+
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    
+    //AWS Analytics
+    var pinpoint: AWSPinpoint?
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        
+        // Initialize Pinpoint to enable session analytics
+        pinpoint = AWSPinpoint(configuration:
+            AWSPinpointConfiguration.defaultPinpointConfiguration(launchOptions: launchOptions))
+
+        
         return true
     }
 

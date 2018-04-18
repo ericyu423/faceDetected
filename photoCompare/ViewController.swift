@@ -8,15 +8,20 @@
 
 import UIKit
 
+//import AWSCore
+import AWSPinpoint
 
 class ViewController: UIViewController,UIImagePickerControllerDelegate,UINavigationControllerDelegate {
     
+    var x = 0
     
     @IBOutlet weak var imageView: UIImageView!
     
     
     @IBAction func takePhoto(_ sender: UIButton) {
         verifyUserImage()
+        takePhotoEvent(takePhotoId: "\(x)", eventType: photoEventType.UploadPhoto.rawValue)
+        x = x + 1
     }
     
     
@@ -178,6 +183,32 @@ extension UIAlertController {
      
     }
     
+}
+extension ViewController {
+    func takePhotoEvent(takePhotoId: String, eventType: String)
+    {
+        //what does takePhotoIdDo ?
+        let pinpointClient = AWSPinpoint(configuration:
+            AWSPinpointConfiguration.defaultPinpointConfiguration(launchOptions: nil))
+        
+        let pinpointAnalyticsClient = pinpointClient.analyticsClient
+        
+        //even it the title
+        let event = pinpointAnalyticsClient.createEvent(withEventType: eventType)
+        event.addAttribute("takephotoID id", forKey: takePhotoId) //can not find this in pinpoint console
+    
+        
+        pinpointAnalyticsClient.record(event)
+        pinpointAnalyticsClient.submitEvents()
+        
+        //can only see event name Upload Photo
+    }
+    
+    enum photoEventType: String {
+        case TookPhoto = "Took Photo"
+        case UploadPhoto = "Upload Photo"
+    }
+
 }
 
 
