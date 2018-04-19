@@ -19,9 +19,8 @@
 		D418BDE420815B2400B1C922 /* photoCompareTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D418BDE320815B2400B1C922 /* photoCompareTests.swift */; };
 		D418BDEF20815B2400B1C922 /* photoCompareUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D418BDEE20815B2400B1C922 /* photoCompareUITests.swift */; };
 		D4EBD0802082B2860078A521 /* VisionProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4EBD07F2082B2860078A521 /* VisionProcessor.swift */; };
-		D4EBD0902082D98E0078A521 /* MainViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4EBD08F2082D98E0078A521 /* MainViewViewController.swift */; };
 		D4FF7C922085ABE3003BFE38 /* README in Resources */ = {isa = PBXBuildFile; fileRef = D4FF7C912085ABE3003BFE38 /* README */; };
-		D4FF7C962087C8FC003BFE38 /* awsconfiguration.json in Resources */ = {isa = PBXBuildFile; fileRef = D4FF7C952087C8FC003BFE38 /* awsconfiguration.json */; };
+		D4FF7C9B2087F056003BFE38 /* awsconfiguration.json in Resources */ = {isa = PBXBuildFile; fileRef = D4FF7C9A2087F056003BFE38 /* awsconfiguration.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,9 +64,8 @@
 		D418BDEE20815B2400B1C922 /* photoCompareUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = photoCompareUITests.swift; sourceTree = "<group>"; };
 		D418BDF020815B2400B1C922 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D4EBD07F2082B2860078A521 /* VisionProcessor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisionProcessor.swift; sourceTree = "<group>"; };
-		D4EBD08F2082D98E0078A521 /* MainViewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewViewController.swift; sourceTree = "<group>"; };
 		D4FF7C912085ABE3003BFE38 /* README */ = {isa = PBXFileReference; lastKnownFileType = text; path = README; sourceTree = "<group>"; };
-		D4FF7C952087C8FC003BFE38 /* awsconfiguration.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = awsconfiguration.json; sourceTree = "<group>"; };
+		D4FF7C9A2087F056003BFE38 /* awsconfiguration.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = awsconfiguration.json; path = ../../awsconfiguration.json; sourceTree = "<group>"; };
 		FF9DBACC1901D32EB7F68840 /* Pods_photoCompare.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_photoCompare.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -148,14 +146,13 @@
 		D418BDCA20815B2200B1C922 /* photoCompare */ = {
 			isa = PBXGroup;
 			children = (
-				D4EBD08F2082D98E0078A521 /* MainViewViewController.swift */,
 				D418BDCB20815B2200B1C922 /* AppDelegate.swift */,
 				D418BDCD20815B2200B1C922 /* ViewController.swift */,
 				D4EBD07F2082B2860078A521 /* VisionProcessor.swift */,
 				D418BDCF20815B2200B1C922 /* Main.storyboard */,
 				D418BDD520815B2300B1C922 /* Assets.xcassets */,
+				D4FF7C9A2087F056003BFE38 /* awsconfiguration.json */,
 				D418BDD720815B2300B1C922 /* LaunchScreen.storyboard */,
-				D4FF7C952087C8FC003BFE38 /* awsconfiguration.json */,
 				D418BDDA20815B2300B1C922 /* Info.plist */,
 				D418BDD220815B2200B1C922 /* photoCompare.xcdatamodeld */,
 			);
@@ -288,7 +285,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D4FF7C962087C8FC003BFE38 /* awsconfiguration.json in Resources */,
+				D4FF7C9B2087F056003BFE38 /* awsconfiguration.json in Resources */,
 				D4FF7C922085ABE3003BFE38 /* README in Resources */,
 				D418BDD920815B2300B1C922 /* LaunchScreen.storyboard in Resources */,
 				D418BDD620815B2300B1C922 /* Assets.xcassets in Resources */,
@@ -339,16 +336,24 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-photoCompare/Pods-photoCompare-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/AWSAuthCore/AWSAuthCore.framework",
+				"${BUILT_PRODUCTS_DIR}/AWSAuthUI/AWSAuthUI.framework",
+				"${BUILT_PRODUCTS_DIR}/AWSCognitoIdentityProvider/AWSCognitoIdentityProvider.framework",
+				"${BUILT_PRODUCTS_DIR}/AWSCognitoIdentityProviderASF/AWSCognitoIdentityProviderASF.framework",
 				"${BUILT_PRODUCTS_DIR}/AWSCore/AWSCore.framework",
 				"${BUILT_PRODUCTS_DIR}/AWSMobileClient/AWSMobileClient.framework",
 				"${BUILT_PRODUCTS_DIR}/AWSPinpoint/AWSPinpoint.framework",
+				"${BUILT_PRODUCTS_DIR}/AWSUserPoolsSignIn/AWSUserPoolsSignIn.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AWSAuthCore.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AWSAuthUI.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AWSCognitoIdentityProvider.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AWSCognitoIdentityProviderASF.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AWSCore.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AWSMobileClient.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AWSPinpoint.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AWSUserPoolsSignIn.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -399,7 +404,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				D4EBD0802082B2860078A521 /* VisionProcessor.swift in Sources */,
-				D4EBD0902082D98E0078A521 /* MainViewViewController.swift in Sources */,
 				D418BDCE20815B2200B1C922 /* ViewController.swift in Sources */,
 				D418BDCC20815B2200B1C922 /* AppDelegate.swift in Sources */,
 				D418BDD420815B2200B1C922 /* photoCompare.xcdatamodeld in Sources */,

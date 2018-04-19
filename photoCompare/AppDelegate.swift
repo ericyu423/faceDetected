@@ -13,26 +13,42 @@ import CoreData
 import AWSCore
 import AWSPinpoint
 
+// Auth imports
+import AWSMobileClient
+
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-    
     //AWS Analytics
     var pinpoint: AWSPinpoint?
-
+    
+    //Instantiate the AWSMobileClient
+    func application(_ application: UIApplication, open url: URL,
+                     sourceApplication: String?, annotation: Any) -> Bool {
+        
+        return AWSMobileClient.sharedInstance().interceptApplication(
+            application, open: url,
+            sourceApplication: sourceApplication,
+            annotation: annotation)
+        
+    }
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
         
+        // Initialize AWSMobileClient
+        let didFinishLaunching = AWSMobileClient.sharedInstance().interceptApplication(
+            application, didFinishLaunchingWithOptions:
+            launchOptions)
+        
         // Initialize Pinpoint to enable session analytics
         pinpoint = AWSPinpoint(configuration:
             AWSPinpointConfiguration.defaultPinpointConfiguration(launchOptions: launchOptions))
 
-        
-        return true
+        return didFinishLaunching
     }
 
     func applicationWillResignActive(_ application: UIApplication) {

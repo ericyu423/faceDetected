@@ -3,5 +3,27 @@ Test only project
 
 1. photo camera, photo library
 
-2. AWS pinpoint
+2. AWS backend
+    basic steps
+    1. AWS->Mobile Hub create project give it a name
+    2. add the type of back-end you need there are tiles for example
+        create a new user pool
+
+                    platform :ios, '9.0'
+                    target :'MyNotes' do
+                    use_frameworks!
+
+                    # Analytics dependency previous example
+                    pod 'AWSPinpoint', '~> 2.6.5'
+
+                    # Auth dependencies
+                    pod 'AWSUserPoolsSignIn', '~> 2.6.5'
+                    pod 'AWSAuthUI', '~> 2.6.5'
+                    pod 'AWSMobileClient', '~> 2.6.5'
+
+                    # other pods
+                    end
+
+    **rvm get stable** if problem update or init podfile
+    run pod install --repo-update
     
