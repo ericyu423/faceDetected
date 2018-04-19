@@ -194,7 +194,6 @@ extension UIAlertController {
 //    }
     
 }
-extesnion ViewController:
 
 extension ViewController {
     func takePhotoEvent(takePhotoId: String, eventType: String)
