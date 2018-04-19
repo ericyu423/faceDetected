@@ -31,23 +31,23 @@ class OnboardingViewController: UIViewController, UICollectionViewDataSource,UIC
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        //view.backgroundColor = .red
-        
+
+        collectionView.register(PageCollectionViewCell.self, forCellWithReuseIdentifier: cellId)
         view.addSubview(collectionView)
-       
         //autolayout
         collectionView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
         collectionView.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
         collectionView.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
         collectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
-        collectionView.register(PageCollectionViewCell.self, forCellWithReuseIdentifier: cellId)
-       
-       
+        //autolayout ends
+        
+        
+
     }
  
 
     
-    //delegate
+    //MARK - Delegate Functions
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 4
     }
