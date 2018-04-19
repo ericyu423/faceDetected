@@ -26,4 +26,7 @@ Test only project
 
     **rvm get stable** if problem update or init podfile
     run pod install --repo-update
+
+3. Testing Onboarding UI
+
     

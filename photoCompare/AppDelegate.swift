@@ -28,7 +28,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, open url: URL,
                      sourceApplication: String?, annotation: Any) -> Bool {
         
-        return AWSMobileClient.sharedInstance().interceptApplication(
+        
+        
+        
+     return AWSMobileClient.sharedInstance().interceptApplication(
             application, open: url,
             sourceApplication: sourceApplication,
             annotation: annotation)
@@ -43,10 +46,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let didFinishLaunching = AWSMobileClient.sharedInstance().interceptApplication(
             application, didFinishLaunchingWithOptions:
             launchOptions)
-        
         // Initialize Pinpoint to enable session analytics
         pinpoint = AWSPinpoint(configuration:
             AWSPinpointConfiguration.defaultPinpointConfiguration(launchOptions: launchOptions))
+        
+        //call onboarding from storyboard
+        self.window = UIWindow(frame: UIScreen.main.bounds)
+        let onboardingViewController = OnboardingViewController()
+        //uncomment if we need to use navgiation stack later on
+        //let navigationController = UINavigationController()
+        //navigationController.viewControllers = [onboardingViewController]
+        self.window!.rootViewController = onboardingViewController //navigationController -switch onboardingVC to navigation if later on we decide to use a navigatino controller
+        self.window?.makeKeyAndVisible()
+        //call onboarding from storyboard --ends
+       
 
         return didFinishLaunching
     }

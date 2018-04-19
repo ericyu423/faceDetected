@@ -10,6 +10,7 @@
 		1417A088815C8C72885E165F /* Pods_photoCompare.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF9DBACC1901D32EB7F68840 /* Pods_photoCompare.framework */; };
 		28570E2C9AC1E88D2806C841 /* Pods_photoCompareTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6471E2089CF89E5BB069C3E3 /* Pods_photoCompareTests.framework */; };
 		C887A69E5A76EB37F1A1AF98 /* Pods_photoCompareUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5002467A43B220A7E8E88FF3 /* Pods_photoCompareUITests.framework */; };
+		D4135A482089135F00E10B63 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4135A472089135F00E10B63 /* OnboardingViewController.swift */; };
 		D418BDCC20815B2200B1C922 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D418BDCB20815B2200B1C922 /* AppDelegate.swift */; };
 		D418BDCE20815B2200B1C922 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D418BDCD20815B2200B1C922 /* ViewController.swift */; };
 		D418BDD120815B2200B1C922 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D418BDCF20815B2200B1C922 /* Main.storyboard */; };
@@ -49,6 +50,7 @@
 		6D2420DA0C56F7056D45DABB /* Pods-photoCompareTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-photoCompareTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-photoCompareTests/Pods-photoCompareTests.release.xcconfig"; sourceTree = "<group>"; };
 		A82D3C5504966EDA159E9501 /* Pods-photoCompare.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-photoCompare.debug.xcconfig"; path = "Pods/Target Support Files/Pods-photoCompare/Pods-photoCompare.debug.xcconfig"; sourceTree = "<group>"; };
 		A96B01879211B1CDF226F61C /* Pods-photoCompareUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-photoCompareUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-photoCompareUITests/Pods-photoCompareUITests.release.xcconfig"; sourceTree = "<group>"; };
+		D4135A472089135F00E10B63 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		D418BDC820815B2200B1C922 /* photoCompare.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = photoCompare.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D418BDCB20815B2200B1C922 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D418BDCD20815B2200B1C922 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -147,6 +149,7 @@
 			isa = PBXGroup;
 			children = (
 				D418BDCB20815B2200B1C922 /* AppDelegate.swift */,
+				D4135A472089135F00E10B63 /* OnboardingViewController.swift */,
 				D418BDCD20815B2200B1C922 /* ViewController.swift */,
 				D4EBD07F2082B2860078A521 /* VisionProcessor.swift */,
 				D418BDCF20815B2200B1C922 /* Main.storyboard */,
@@ -405,6 +408,7 @@
 			files = (
 				D4EBD0802082B2860078A521 /* VisionProcessor.swift in Sources */,
 				D418BDCE20815B2200B1C922 /* ViewController.swift in Sources */,
+				D4135A482089135F00E10B63 /* OnboardingViewController.swift in Sources */,
 				D418BDCC20815B2200B1C922 /* AppDelegate.swift in Sources */,
 				D418BDD420815B2200B1C922 /* photoCompare.xcdatamodeld in Sources */,
 			);
