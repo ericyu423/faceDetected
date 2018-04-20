@@ -12,6 +12,32 @@ class OnboardingViewController: UIViewController, UICollectionViewDataSource,UIC
     
     let cellId = "cell"
     
+    
+    lazy var pageControl: UIPageControl = {
+        let pc = UIPageControl()
+        pc.pageIndicatorTintColor = .lightGray
+        pc.currentPageIndicatorTintColor = .blue
+        pc.numberOfPages = pages.count
+        pc.translatesAutoresizingMaskIntoConstraints = false
+        return pc
+    }()
+    
+    let skipButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.setTitle("Skip", for: .normal)
+        button.setTitleColor(.blue, for: .normal)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        return button
+    }()
+    
+    let nextButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.setTitle("Next", for: .normal)
+        button.setTitleColor(.blue, for: .normal)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        return button
+    }()
+    
     lazy var collectionView: UICollectionView = {
         
         let layout = UICollectionViewFlowLayout()
