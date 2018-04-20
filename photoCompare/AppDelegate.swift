@@ -27,16 +27,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     //Instantiate the AWSMobileClient
     func application(_ application: UIApplication, open url: URL,
                      sourceApplication: String?, annotation: Any) -> Bool {
-        
-        
-        
-        
+    
      return AWSMobileClient.sharedInstance().interceptApplication(
             application, open: url,
             sourceApplication: sourceApplication,
             annotation: annotation)
         
     }
+    
+    
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
@@ -52,13 +51,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         //call onboarding from storyboard
         self.window = UIWindow(frame: UIScreen.main.bounds)
-        let onboardingViewController = OnboardingViewController()
-        //uncomment if we need to use navgiation stack later on
-        //let navigationController = UINavigationController()
-        //navigationController.viewControllers = [onboardingViewController]
-        self.window!.rootViewController = onboardingViewController //navigationController -switch onboardingVC to navigation if later on we decide to use a navigatino controller
+        let storyboard = UIStoryboard(name: "Main",bundle: nil)
+        
+        let viewController: UIViewController!
+       
+     
+        if(UserDefaults.standard.bool(forKey: "ONBOARDINGALREADY")){
+            viewController = storyboard.instantiateInitialViewController()
+        }else {
+            viewController = OnboardingViewController()
+        }
+        self.window!.rootViewController = viewController
         self.window?.makeKeyAndVisible()
-        //call onboarding from storyboard --ends
+    
        
 
         return didFinishLaunching

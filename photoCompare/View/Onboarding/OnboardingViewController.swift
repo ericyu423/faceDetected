@@ -20,7 +20,7 @@ class OnboardingViewController: UIViewController, UICollectionViewDataSource,UIC
     
         let cv = UICollectionView(frame: .zero, collectionViewLayout: layout)
         cv.translatesAutoresizingMaskIntoConstraints = false
-        cv.backgroundColor = .red
+        cv.backgroundColor = .white
         cv.dataSource = self
         cv.delegate = self
         
@@ -46,15 +46,26 @@ class OnboardingViewController: UIViewController, UICollectionViewDataSource,UIC
     }
  
 
-    
+    let pages: [Page] = {
+        let page1 = Page(title: "Title 1", message: "Introduce the App to the user here and provide images on top ", imageName: "onboarding1")
+         let page2 = Page(title: "Title 2", message: "Introduce the App to the user here and provide images on top ", imageName: "onboarding1")
+         let page3 = Page(title: "Title 3", message: "Introduce the App to the user here and provide images on top ", imageName: "onboarding1")
+
+        return [page1,page2,page3]
+
+    }()
     //MARK - Delegate Functions
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 4
+        return pages.count
     }
   
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! PageCollectionViewCell
+        
+        let page = pages[indexPath.item]
+        cell.page = page
+        
         return cell
     }
     
