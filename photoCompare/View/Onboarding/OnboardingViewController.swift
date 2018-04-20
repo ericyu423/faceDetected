@@ -5,14 +5,13 @@
 //  Created by eric yu on 4/19/18.
 //  Copyright © 2018 eric yu. All rights reserved.
 //
-
 import UIKit
 
 class OnboardingViewController: UIViewController, UICollectionViewDataSource,UICollectionViewDelegate,UICollectionViewDelegateFlowLayout{
     
     let cellId = "cell"
     let photoCell = "photoCell"
-  
+    
     let pages: [Page] = {
         let page1 = Page(title: "Title 1", message: "Introduce the App to the user here and provide images on top ", imageName: "onboarding1")
         let page2 = Page(title: "Title 2", message: "Introduce the App to the user here and provide images on top ", imageName: "onboarding1")
@@ -29,9 +28,6 @@ class OnboardingViewController: UIViewController, UICollectionViewDataSource,UIC
         pc.translatesAutoresizingMaskIntoConstraints = false
         return pc
     }()
-    
-    
-    
     
     let skipButton: UIButton = {
         let button = UIButton(type: .system)
@@ -91,7 +87,6 @@ class OnboardingViewController: UIViewController, UICollectionViewDataSource,UIC
         pageControl.heightAnchor.constraint(equalToConstant: 40).isActive = true
         pageControl.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
         
-        
         //autolayout pageController ends
         
         
@@ -113,27 +108,25 @@ class OnboardingViewController: UIViewController, UICollectionViewDataSource,UIC
         
     }
     
-    
     //MARK - CollectionView Functions
     private func registerCellForDifferentOnboardingPageStyle(){
+        
         collectionView.register(PageCollectionViewCell.self, forCellWithReuseIdentifier: cellId)
-        collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: photoCell)
+        
+        collectionView.register(PhotoCaptureCell.self, forCellWithReuseIdentifier: photoCell)
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return pages.count + 1 //+1 for the extra takephoto style Cell
     }
     
-    
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         //at last page show photo capture page
         if indexPath.item == pages.count {
-            let photoCaptureCell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath)
+            let photoCaptureCell = collectionView.dequeueReusableCell(withReuseIdentifier: photoCell, for: indexPath)
             return photoCaptureCell
         }
-        
-        
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! PageCollectionViewCell
         
@@ -145,6 +138,17 @@ class OnboardingViewController: UIViewController, UICollectionViewDataSource,UIC
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: view.frame.width, height: view.frame.height)
+    }
+}
+
+//rotation
+extension OnboardingViewController {
+    override var shouldAutorotate: Bool {
+        return false
+    }
+    
+    override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
+        return .portrait
     }
 }
 
@@ -171,6 +175,9 @@ extension OnboardingViewController {
     }
     
 }
+
+
+
 
 
 // this is another way to get pageNumber
